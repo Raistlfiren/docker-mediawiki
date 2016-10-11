@@ -169,5 +169,8 @@ $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 # InputBox
 wfLoadExtension( 'InputBox' );
 
+# Math
+wfLoadExtension( 'Math' );
+
 # Load extra settings
 require 'ExtraLocalSettings.php';

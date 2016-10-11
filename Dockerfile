@@ -107,6 +107,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/InputBox-$EXTENSION_VISUALEDITOR
 RUN tar -xzf /tmp/extension-inputbox.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-inputbox.tar.gz
 
+# Math extension
+ARG EXTENSION_MATH_VERSION=REL1_27-efdd7c2
+ADD https://extdist.wmflabs.org/dist/extensions/Math-EXTENSION_MATH_VERSION.tar.gz /tmp/extension-math.tar.gz
+RUN tar -xzf /tmp/extension-math.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-math.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz
