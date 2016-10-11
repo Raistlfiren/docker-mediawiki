@@ -166,5 +166,8 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 $wgSessionsInObjectCache = true;
 $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 
+# InputBox
+wfLoadExtension( 'InputBox' );
+
 # Load extra settings
 require 'ExtraLocalSettings.php';
