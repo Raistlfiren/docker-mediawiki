@@ -113,6 +113,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/Math-EXTENSION_MATH_VERSION.tar.
 RUN tar -xzf /tmp/extension-math.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-math.tar.gz
 
+# CodeEditor extension
+ARG EXTENSION_CODEDITOR_VERSION=REL1_27-5e8053d
+ADD https://extdist.wmflabs.org/dist/extensions/CoedEditor-EXTENSION_CODEDITOR_VERSION.tar.gz /tmp/extension-codeditor.tar.gz
+RUN tar -xzf /tmp/extension-codeditor.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-codeditor.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz

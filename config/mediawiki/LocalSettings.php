@@ -172,5 +172,8 @@ wfLoadExtension( 'InputBox' );
 # Math
 wfLoadExtension( 'Math' );
 
+# CodeEditor
+wfLoadExtension( 'CodeEditor' );
+
 # Load extra settings
 require 'ExtraLocalSettings.php';
