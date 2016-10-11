@@ -101,6 +101,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/VisualEditor-$EXTENSION_VISUALED
 RUN tar -xzf /tmp/extension-visualeditor.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-visualeditor.tar.gz
 
+# InputBox extension
+ARG EXTENSION_INPUTBOX_VERSION=REL1_27-b02a228
+ADD https://extdist.wmflabs.org/dist/extensions/InputBox-$EXTENSION_VISUALEDITOR_VERSION.tar.gz /tmp/extension-inputbox.tar.gz
+RUN tar -xzf /tmp/extension-inputbox.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-inputbox.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz
