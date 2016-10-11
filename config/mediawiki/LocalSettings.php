@@ -175,5 +175,8 @@ wfLoadExtension( 'Math' );
 # CodeEditor
 wfLoadExtension( 'CodeEditor' );
 
+# SyntaxHighlight
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+
 # Load extra settings
 require 'ExtraLocalSettings.php';

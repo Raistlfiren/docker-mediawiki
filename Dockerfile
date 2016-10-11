@@ -119,6 +119,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/CoedEditor-EXTENSION_CODEDITOR_V
 RUN tar -xzf /tmp/extension-codeditor.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-codeditor.tar.gz
 
+# SyntaxHighlight extension
+ARG EXTENSION_SYNTAXHIGHLIGHT_VERSION=REL1_27-5e8053d
+ADD https://extdist.wmflabs.org/dist/extensions/SyntaxHighlight-EXTENSION_SYNTAXHIGHLIGHT_VERSION.tar.gz /tmp/extension-syntaxhighlight.tar.gz
+RUN tar -xzf /tmp/extension-syntaxhighlight.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-syntaxhighlight.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz
