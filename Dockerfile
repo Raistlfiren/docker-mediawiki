@@ -120,7 +120,7 @@ RUN tar -xzf /tmp/extension-codeditor.tar.gz -C /var/www/mediawiki/extensions &&
     rm /tmp/extension-codeditor.tar.gz
 
 # SyntaxHighlight extension
-ARG EXTENSION_SYNTAXHIGHLIGHT_VERSION=REL1_27-5e8053d
+ARG EXTENSION_SYNTAXHIGHLIGHT_VERSION=REL1_27-20c4ad5
 ADD https://extdist.wmflabs.org/dist/extensions/SyntaxHighlight-EXTENSION_SYNTAXHIGHLIGHT_VERSION.tar.gz /tmp/extension-syntaxhighlight.tar.gz
 RUN tar -xzf /tmp/extension-syntaxhighlight.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-syntaxhighlight.tar.gz
