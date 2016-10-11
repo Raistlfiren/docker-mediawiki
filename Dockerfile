@@ -125,6 +125,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/SyntaxHighlight-EXTENSION_SYNTAX
 RUN tar -xzf /tmp/extension-syntaxhighlight.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-syntaxhighlight.tar.gz
 
+# SpamBlacklist extension
+ARG EXTENSION_SPAMBLACKLIST_VERSION=REL1_27-c8992f0
+ADD https://extdist.wmflabs.org/dist/extensions/SpamBlacklist-EXTENSION_SPAMBLACKLIST_VERSION.tar.gz /tmp/extension-spamblacklist.tar.gz
+RUN tar -xzf /tmp/extension-spamblacklist.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-spamblacklist.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz

@@ -178,5 +178,8 @@ wfLoadExtension( 'CodeEditor' );
 # SyntaxHighlight
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
+# SpamBlacklist
+wfLoadExtension( 'SpamBlacklist' );
+
 # Load extra settings
 require 'ExtraLocalSettings.php';
