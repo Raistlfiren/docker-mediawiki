@@ -103,31 +103,31 @@ RUN tar -xzf /tmp/extension-visualeditor.tar.gz -C /var/www/mediawiki/extensions
 
 # InputBox extension
 ARG EXTENSION_INPUTBOX_VERSION=REL1_27-b02a228
-ADD https://extdist.wmflabs.org/dist/extensions/InputBox-$EXTENSION_VISUALEDITOR_VERSION.tar.gz /tmp/extension-inputbox.tar.gz
+ADD https://extdist.wmflabs.org/dist/extensions/InputBox-$EXTENSION_INPUTBOX_VERSION.tar.gz /tmp/extension-inputbox.tar.gz
 RUN tar -xzf /tmp/extension-inputbox.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-inputbox.tar.gz
 
 # Math extension
 ARG EXTENSION_MATH_VERSION=REL1_27-efdd7c2
-ADD https://extdist.wmflabs.org/dist/extensions/Math-EXTENSION_MATH_VERSION.tar.gz /tmp/extension-math.tar.gz
+ADD https://extdist.wmflabs.org/dist/extensions/Math-$EXTENSION_MATH_VERSION.tar.gz /tmp/extension-math.tar.gz
 RUN tar -xzf /tmp/extension-math.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-math.tar.gz
 
 # CodeEditor extension
 ARG EXTENSION_CODEDITOR_VERSION=REL1_27-5e8053d
-ADD https://extdist.wmflabs.org/dist/extensions/CoedEditor-EXTENSION_CODEDITOR_VERSION.tar.gz /tmp/extension-codeditor.tar.gz
+ADD https://extdist.wmflabs.org/dist/extensions/CodeEditor-$EXTENSION_CODEDITOR_VERSION.tar.gz /tmp/extension-codeditor.tar.gz
 RUN tar -xzf /tmp/extension-codeditor.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-codeditor.tar.gz
 
 # SyntaxHighlight extension
 ARG EXTENSION_SYNTAXHIGHLIGHT_VERSION=REL1_27-20c4ad5
-ADD https://extdist.wmflabs.org/dist/extensions/SyntaxHighlight-EXTENSION_SYNTAXHIGHLIGHT_VERSION.tar.gz /tmp/extension-syntaxhighlight.tar.gz
+ADD https://extdist.wmflabs.org/dist/extensions/SyntaxHighlight_GeSHi-$EXTENSION_SYNTAXHIGHLIGHT_VERSION.tar.gz /tmp/extension-syntaxhighlight.tar.gz
 RUN tar -xzf /tmp/extension-syntaxhighlight.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-syntaxhighlight.tar.gz
 
 # SpamBlacklist extension
 ARG EXTENSION_SPAMBLACKLIST_VERSION=REL1_27-c8992f0
-ADD https://extdist.wmflabs.org/dist/extensions/SpamBlacklist-EXTENSION_SPAMBLACKLIST_VERSION.tar.gz /tmp/extension-spamblacklist.tar.gz
+ADD https://extdist.wmflabs.org/dist/extensions/SpamBlacklist-$EXTENSION_SPAMBLACKLIST_VERSION.tar.gz /tmp/extension-spamblacklist.tar.gz
 RUN tar -xzf /tmp/extension-spamblacklist.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-spamblacklist.tar.gz
 
