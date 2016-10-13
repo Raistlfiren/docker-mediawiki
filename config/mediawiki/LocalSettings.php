@@ -97,8 +97,8 @@ if (getenv('WIKI_FILE_EXTENSIONS') != '') {
 
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
-$wgUseInstantCommons = false;
-$wgShellLocale = "C.UTF-8";
+$wgUseInstantCommons = true;
+$wgShellLocale = "en_US.UTF-8";
 
 if (getenv('WIKI_LANGUAGE_CODE') != '') {
     $wgLanguageCode = getenv('WIKI_LANGUAGE_CODE');
@@ -118,9 +118,8 @@ $wgAuthenticationTokenVersion = "1";
 
 $wgDiff3 = "/usr/bin/diff3";
 
-$wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
-$wgGroupPermissions['*']['read'] = false;
+$wgShowIPinHeader = false;
 
 $wgDefaultSkin = "vector";
 if (getenv('WIKI_DEFAULT_SKIN') != '') {
