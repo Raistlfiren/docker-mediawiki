@@ -2,10 +2,10 @@ FROM php:7-fpm
 MAINTAINER Kristoph Junge <kristoph.junge@gmail.com>
 
 # Change UID and GID of www-data user to match host privileges
-ARG WIKI_USER_UID=999
-ARG WIKI_USER_GID=999
-RUN usermod -u $WIKI_USER_UID www-data && \
-    groupmod -g $WIKI_USER_GID www-data
+ARG MEDIAWIKI_USER_UID=999
+ARG MEDIAWIKI_USER_GID=999
+RUN usermod -u $MEDIAWIKI_USER_UID www-data && \
+    groupmod -g $MEDIAWIKI_USER_GID www-data
 
 # Utilities
 RUN apt-get update && \
@@ -88,11 +88,11 @@ COPY config/parsoid/localsettings.js /usr/lib/parsoid/src/localsettings.js
 ARG MEDIAWIKI_VERSION_MAJOR=1.27
 ARG MEDIAWIKI_VERSION=1.27.1
 ADD https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION_MAJOR/mediawiki-$MEDIAWIKI_VERSION.tar.gz /tmp/mediawiki.tar.gz
-RUN mkdir -p /var/www/mediawiki && \
+RUN mkdir -p /var/www/mediawiki /data && \
     tar -xzf /tmp/mediawiki.tar.gz -C /tmp && \
     mv /tmp/mediawiki-$MEDIAWIKI_VERSION/* /var/www/mediawiki && \
     rm -rf /tmp/mediawiki.tar.gz /tmp/mediawiki-$MEDIAWIKI_VERSION/ && \
-    chown -R www-data:www-data /var/www/mediawiki/images
+    chown -R www-data:www-data /var/www/mediawiki/images /data
 COPY config/mediawiki/* /var/www/mediawiki/
 
 # VisualEditor extension
@@ -173,6 +173,6 @@ RUN mkdir /script
 COPY script/* /script/
 
 # General setup
-VOLUME ["/var/cache/nginx", "/var/www/mediawiki/images"]
+VOLUME ["/var/cache/nginx", "/var/www/mediawiki/images", "/data"]
 EXPOSE 80 443
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
