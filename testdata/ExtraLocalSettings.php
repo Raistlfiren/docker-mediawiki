@@ -5,4 +5,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
     exit;
 }
 
-$wgSitename = "MyWikiOverride";
+$wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoUseGeSHi = true;
+$wgScribuntoUseCodeEditor = true;
