@@ -180,5 +180,8 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 # SpamBlacklist
 wfLoadExtension( 'SpamBlacklist' );
 
+# Scribunto
+require_once "$IP/extensions/Scribunto/Scribunto.php";
+
 # Load extra settings
 require 'ExtraLocalSettings.php';

@@ -101,6 +101,13 @@ ADD https://extdist.wmflabs.org/dist/extensions/VisualEditor-$EXTENSION_VISUALED
 RUN tar -xzf /tmp/extension-visualeditor.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-visualeditor.tar.gz
 
+# Scribunto extension
+ARG EXTENSION_SCRIBUNTO_VERSION=REL1_27-4da5346
+ADD https://extdist.wmflabs.org/dist/extensions/Scribunto-$EXTENSION_SCRIBUNTO_VERSION.tar.gz /tmp/extension-scribunto.tar.gz
+RUN tar -xzf /tmp/extension-scribunto.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-scribunto.tar.gz
+RUN chmod a+x /var/www/mediawiki/extensions/Scribunto/engines/LuaStandalone/binaries/lua5_1_5_linux_64_generic/lua
+
 # InputBox extension
 ARG EXTENSION_INPUTBOX_VERSION=REL1_27-b02a228
 ADD https://extdist.wmflabs.org/dist/extensions/InputBox-$EXTENSION_INPUTBOX_VERSION.tar.gz /tmp/extension-inputbox.tar.gz
@@ -111,7 +118,10 @@ RUN tar -xzf /tmp/extension-inputbox.tar.gz -C /var/www/mediawiki/extensions && 
 ARG EXTENSION_MATH_VERSION=REL1_27-efdd7c2
 ADD https://extdist.wmflabs.org/dist/extensions/Math-$EXTENSION_MATH_VERSION.tar.gz /tmp/extension-math.tar.gz
 RUN tar -xzf /tmp/extension-math.tar.gz -C /var/www/mediawiki/extensions && \
-    rm /tmp/extension-math.tar.gz
+    rm /tmp/extension-math.tar.gz && \
+    apt-get install -y ocaml --no-install-recommends && \
+    cd /var/www/mediawiki/extensions/Math/math && \
+    make && chmod 755 texvc
 
 # CodeEditor extension
 ARG EXTENSION_CODEDITOR_VERSION=REL1_27-5e8053d
