@@ -178,6 +178,9 @@ if (getenv('MEDIAWIKI_ENABLE_VISUAL_EDITOR') == '' || getenv('MEDIAWIKI_ENABLE_V
     $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 }
 
+# WikiEditor
+wfLoadExtension( 'WikiEditor' );
+
 # InputBox
 wfLoadExtension( 'InputBox' );
 
