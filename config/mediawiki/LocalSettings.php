@@ -196,6 +196,9 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 # SpamBlacklist
 wfLoadExtension( 'SpamBlacklist' );
 
+# Parser Functions
+wfLoadExtension( 'ParserFunctions' );
+
 # Scribunto
 require_once "$IP/extensions/Scribunto/Scribunto.php";
 

@@ -141,6 +141,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/SpamBlacklist-$EXTENSION_SPAMBLA
 RUN tar -xzf /tmp/extension-spamblacklist.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-spamblacklist.tar.gz
 
+# ParserFunctions extension
+ARG EXTENSION_PARSERFUNCTIONS_VERSION=REL1_27-d0a5d10
+ADD https://extdist.wmflabs.org/dist/extensions/ParserFunctions-$EXTENSION_PARSERFUNCTIONS_VERSION.tar.gz /tmp/extension-parserfunctions.tar.gz
+RUN tar -xzf /tmp/extension-parserfunctions.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-parserfunctions.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz
