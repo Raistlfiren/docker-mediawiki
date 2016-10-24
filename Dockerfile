@@ -119,7 +119,7 @@ ARG EXTENSION_MATH_VERSION=REL1_27-efdd7c2
 ADD https://extdist.wmflabs.org/dist/extensions/Math-$EXTENSION_MATH_VERSION.tar.gz /tmp/extension-math.tar.gz
 RUN tar -xzf /tmp/extension-math.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-math.tar.gz && \
-    apt-get install -y ocaml --no-install-recommends && \
+    apt-get install -y dvipng texlive-latex-extra ocaml --no-install-recommends && \
     cd /var/www/mediawiki/extensions/Math/math && \
     make && chmod 755 texvc
 
