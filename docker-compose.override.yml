@@ -31,8 +31,8 @@ services:
       MEDIAWIKI_PASSWORD_SENDER: ${PASSWORD_SENDER}
       MEDIAWIKI_DEBUG: 0
     ports:
-    - "80:80"
-    - "443:443"
+    - "8079:80"
+    - "8080:443"
  #   links:
  #   - db:db
     volumes:
