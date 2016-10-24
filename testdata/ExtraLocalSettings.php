@@ -23,5 +23,3 @@ $wgDefaultUserOptions['wikieditor-preview'] = 1;
 
 # Displays the Publish and Cancel buttons on the top right side
 $wgDefaultUserOptions['wikieditor-publish'] = 1;
-
-$wgGroupPermissions['user']['editinterface'] = true;
