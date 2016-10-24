@@ -199,6 +199,9 @@ wfLoadExtension( 'SpamBlacklist' );
 # Parser Functions
 wfLoadExtension( 'ParserFunctions' );
 
+# Mobile Frontend
+require_once "$IP/extensions/MobileFrontend/MobileFrontend.php";
+
 # Scribunto
 require_once "$IP/extensions/Scribunto/Scribunto.php";
 

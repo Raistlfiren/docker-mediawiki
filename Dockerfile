@@ -147,6 +147,12 @@ ADD https://extdist.wmflabs.org/dist/extensions/ParserFunctions-$EXTENSION_PARSE
 RUN tar -xzf /tmp/extension-parserfunctions.tar.gz -C /var/www/mediawiki/extensions && \
     rm /tmp/extension-parserfunctions.tar.gz
 
+# MobileFrontend extension
+ARG EXTENSION_MOBILEFRONTEND_VERSION=REL1_27-717861c
+ADD https://extdist.wmflabs.org/dist/extensions/MobileFrontend-$EXTENSION_MOBILEFRONTEND_VERSION.tar.gz /tmp/extension-mobilefrontend.tar.gz
+RUN tar -xzf /tmp/extension-mobilefrontend.tar.gz -C /var/www/mediawiki/extensions && \
+    rm /tmp/extension-mobilefrontend.tar.gz
+
 # CologneBlue skin
 ARG SKIN_COLOGNEBLUE_VERSION=REL1_27-8932b44
 ADD https://extdist.wmflabs.org/dist/skins/CologneBlue-$SKIN_COLOGNEBLUE_VERSION.tar.gz /tmp/skin-cologneblue.tar.gz

@@ -10,3 +10,4 @@ $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
 $wgCodeEditorEnableCore = true;
 $wgPFEnableStringFunctions = true;
+$wgMFAutodetectMobileView = true;
