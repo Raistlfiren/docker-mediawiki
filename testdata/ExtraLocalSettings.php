@@ -8,3 +8,4 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgScribuntoDefaultEngine = 'luastandalone';
 $wgScribuntoUseGeSHi = true;
 $wgScribuntoUseCodeEditor = true;
+$wgCodeEditorEnableCore = true;
